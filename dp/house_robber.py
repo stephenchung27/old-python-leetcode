@@ -9,6 +9,7 @@ What’s the maximum value you can steal from the block?
 
 # Time complexity: O(n)
 # Space complexity: O(1) additional space
+# Dynamic programming with destructive caching
 from typing import List
 def house_robber(houses: List[int]) -> int:
     if len(houses) == 0: return None
@@ -17,3 +18,16 @@ def house_robber(houses: List[int]) -> int:
     for i in range(2, len(houses)):
         houses[i] = max(houses[i-2], houses[i-3]) + houses[i]
     return max(houses[-1], houses[-2])
+
+# Time complexity: O(n)
+# Space complexity: O(1)
+from typing import List
+def house_robber(houses: List[int]) -> int:
+    if len(houses) == 0: return None
+    if len(houses) == 1: return houses[0]
+    if len(houses) == 2: return max(houses[0], houses[1])
+    a = houses[0]
+    b = houses[1]
+    for i in range(2, len(houses)):
+        a, b = b, max(b, a + houses[i])
+    return b
