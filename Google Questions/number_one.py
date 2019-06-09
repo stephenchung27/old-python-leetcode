@@ -13,3 +13,22 @@ T(w) = (w ** 2 + w) / 2
 y = z - T(W(z))
 x = w - y
 '''
+
+from typing import Tuple
+
+def parsePositionToInt(pos: Tuple[int]):
+    x, y = pos
+    return 0.5 * (x + y) * (x + y + 1) + y
+
+def parseIntToPosition(z: int):
+    w = int(((8 * z + 1) ** 0.5 - 1) / 2)
+    t = (w ** 2 + w) / 2
+    y = z - t
+    x = w - y
+    return (int(x), int(y))
+
+pos = (12, 4)
+i = parsePositionToInt(pos)
+z = parseIntToPosition(i)
+
+print(pos, i, z)
