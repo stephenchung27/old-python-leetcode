@@ -25,3 +25,4 @@ This is an ambiguous question... Where can your house lie?
 '''
 
 def best_place_on_block(arr):
+   
