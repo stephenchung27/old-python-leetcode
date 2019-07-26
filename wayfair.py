@@ -31,4 +31,4 @@ def solution(A):
 print(solution(A))
 print(solution(B))
 print(solution(C))
-print(solution(D))
+print(solution(D))g
