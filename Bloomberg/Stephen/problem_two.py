@@ -17,3 +17,7 @@ class StockMachine:
         selected_index = self.partition(pivot_index)
 
     def partition(self, stocks, pivot_index):
+
+stock_sold(stock_name, volume)
+top_k_volume(k)
+
